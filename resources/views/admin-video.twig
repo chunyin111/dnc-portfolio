@@ -1,0 +1,71 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+	    <div class="container">
+	        <h3>Add Video</h3>
+    		<form method="post" action="{{ path_for('admin.video') }}" autocomplete = "off" enctype="multipart/form-data">
+    		    <div class="row">
+    		        <div class="col-md-12">
+                		<div class = "form-group {{ errors.category ? 'has-error' : '' }}">
+                			<label for = "Category" >Category</label>
+                                <label class="radio-inline"><input type="radio" id ="youtube" name = "category" value="100" checked = "checked"\>Youtube</label>
+            					<label class="radio-inline"><input type="radio" id ="vimeo" name = "category" value="200" \>Vimeo</label>
+            				{% if errors.category %}
+            					<span class = "help-block">{{ errors.category | first }}</span>
+            				{% endif %}
+                		</div>
+                		
+                		<div class = "form-group {{ errors.title ? 'has-error' : '' }}" >
+                			<label for="Title">Title</label>
+                    		<input class="form-control" id="title" name = "title" required="required"></input>
+                    		{% if errors.title %}
+                				<span class = "help-block">{{ errors.title | first }}</span>
+                			{% endif %}
+                		</div>
+                		
+                		<div class = "form-group {{ errors.video ? 'has-error' : '' }}" >
+                			<label for="video">Video ID</label>
+                    		<input class="form-control" id="video" name = "video" required="required"></input>
+                    		{% if errors.video %}
+                				<span class = "help-block">{{ errors.video | first }}</span>
+                			{% endif %}
+                		</div>
+
+                        <div id = "only_vimeo" class = "form-group {{ errors.poster ? 'has-error' : '' }}" >
+                            <label for="poster">Select Poster</label>
+                            <input type="file" name="poster" id="poster">
+                            {% if errors.poster %}
+                                <span class = "help-block">{{ errors.poster | first }}</span>
+                            {% endif %}
+                        </div>
+                		
+                		<br style="clear: both" /><br style="clear: both" />
+                		<input type="submit" class="btn btn-primary" value="Send" />
+                	</div>	
+                </div>	
+                {{ csrf.field | raw }}
+        	</form>
+    	</div>
+
+    <script type="text/javascript">
+     $(function() {
+        $('#only_vimeo').hide();
+        var selValue = $('input[name=category]:checked').val();
+        $('#vimeo').on('click', function(){
+            if($(this).val() == 200){
+                $('#only_vimeo').fadeIn();
+            }
+        });
+
+         $('#youtube').on('click', function(){
+            if($(this).val() == 100){
+                $('#only_vimeo').fadeOut();
+            }
+        });
+    });
+    </script>
+</body>
+{% endblock %}

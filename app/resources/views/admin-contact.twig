@@ -1,0 +1,53 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+	<!-- <link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-grid.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-reboot.min.css" type="text/css" /> -->
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+	<script type="text/javascript" src="{{ base_url()}}/js/bootstrap/bootstrap.min.js"></script>
+	<h3>Contact List</h3>
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+		<table>
+		  <tr>
+		    <th>ID</th>
+		    <th>First Name</th>
+		    <th>Last Name</th>
+		    <th>Phone Number</th>
+		    <th>Message</th>
+		    <th>Services</th>
+		    <th>Date</th>
+		  </tr>
+		  {% for key, value in data %}
+		  <tr>
+		    <td>{{ value.id }}</td>
+		    <td>{{ value.first }}</td>
+		    <td>{{ value.last }}</td>
+		    <td>{{ value.number }}</td>
+		    <td>{{ value.message }}</td>
+		    <td>{{ value.services }}</td>
+		    <td>{{ value.created_at }}</td>
+		  </tr>
+		  {% endfor %}
+		</table>
+
+	</body>
+	<script type="text/javascript"></script>
+{% endblock %}

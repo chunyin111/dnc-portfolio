@@ -1,0 +1,98 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-grid.min.css" type="text/css"/>
+    <link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-reboot.min.css" type="text/css" />
+    <script src="{{ base_url()}}/js/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<style>
+div.list {
+    margin: 0px auto; padding: 20px;
+    margin-top: 60px;
+}
+img {
+    max-width: 300px;
+    max-height: 350px;
+}  
+.nopad {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+/*image gallery*/
+.image-checkbox {
+    cursor: pointer;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 4px solid transparent;
+    margin-bottom: 0;
+    outline: 0;
+}
+.image-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.image-checkbox-checked {
+    border-color: #4783B0;
+}
+.image-checkbox .fa {
+  position: absolute;
+  color: #4A79A3;
+  background-color: #fff;
+  padding: 10px;
+  top: 0;
+  right: 0;
+}
+.image-checkbox-checked .fa {
+  display: block !important;
+}
+</style>
+	<div class = "list">
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+        {% if data %}
+        <form method="post" action="{{ path_for('admin.remove-image') }}" autocomplete = "off" enctype="multipart/form-data">
+        <div class="container">
+            {% for key, value in data %}
+               <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-responsive" src="{{value.url_image}}" />
+                  <input type="checkbox" name="image[]" value="{{value.id}}" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+              </div>
+            {% endfor %}
+            {% if errors.services %}
+                <span class = "help-block">{{ errors.image | first }}</span>
+            {% endif %}
+        </div>
+            <div class="btn-group">
+                <input type="submit" class="btn btn-primary" value="Remove" />
+            </div>
+            {{ csrf.field | raw }}
+        </form>
+        {% endif %}
+	</body>
+	</div>
+<script type="text/javascript">
+// image gallery
+// init the state from the input
+$(".image-checkbox").each(function () {
+  if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+    $(this).addClass('image-checkbox-checked');
+  }
+  else {
+    $(this).removeClass('image-checkbox-checked');
+  }
+});
+
+// sync the state to the input
+$(".image-checkbox").on("click", function (e) {
+  $(this).toggleClass('image-checkbox-checked');
+  var $checkbox = $(this).find('input[type="checkbox"]');
+  $checkbox.prop("checked",!$checkbox.prop("checked"))
+
+  e.preventDefault();
+});
+</script>
+{% endblock %}

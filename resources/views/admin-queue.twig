@@ -1,0 +1,120 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-grid.min.css" type="text/css"/>
+    <link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-reboot.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{ base_url()}}/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="{{ base_url()}}/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="{{ base_url()}}/css/skeleton.css" type="text/css" />
+    <script src="{{ base_url()}}/js/jquery.min.js" type="text/javascript"></script>
+    <script src="{{ base_url()}}/js/jquery.ui.js" type="text/javascript"></script>
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+div.list {
+    margin: 0px auto;
+    padding: 20px;
+    margin-top: 60px;
+}
+img {
+    max-width: 300px;
+    max-height: 350px;
+}
+a {
+    display: inline;
+}
+
+</style>
+	<div class = "list">
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+	    <div class="container">
+
+            <a href="{{ path_for('admin.queue-image') }}?id=1" class="btn btn-info" role="button">Wedding Ceremony</a>
+            <a href="{{ path_for('admin.queue-image') }}?id=2" class="btn btn-info" role="button">Pre Wedding</a>
+            <a href="{{ path_for('admin.queue-image') }}?id=3" class="btn btn-info" role="button">Couple</a>
+            <a href="{{ path_for('admin.queue-image') }}?id=4" class="btn btn-info" role="button">Sisterhood</a>
+            <a href="{{ path_for('admin.queue-image') }}?id=5" class="btn btn-info" role="button">Family</a>
+            
+            {% if data %}
+            <ul class="sortable">
+                {% for key, value in data %}
+                <li id='item-{{value.id}}'><img src="{{value.url_image}}" alt=""></li>
+                {% endfor %}
+            </ul>
+
+            <button class="save">Save</button>
+            {% endif %}
+            <input type = "hidden" id = category name = category value = "{{ category }}" >
+            {{ csrf.field | raw }}
+
+        </div>
+	</body>
+	</div>
+<script type="text/javascript">
+     
+    // var requestQueue = [];
+    // var isInRequest = false;
+    var ul_sortable = $('.sortable'); //setup one variable for sortable holder that will be used in few places
+    var csrfName = document.getElementById('csrf_name').value;
+    var csrfValue = document.getElementById('csrf_value').value;
+    var category = document.getElementById('category').value;
+
+    /*
+    * jQuery UI Sortable setup
+    */
+    ul_sortable.sortable({
+        revert: 100,
+        placeholder: 'placeholder'
+    });
+    ul_sortable.disableSelection();
+
+    var btn_save = $('button.save'); // select save button
+
+    btn_save.on('click', function(e){ // trigger function on save button click
+            e.preventDefault(); 
+
+            var sortable_data = ul_sortable.sortable('serialize'); // serialize data from ul#sortable
+            console.log(sortable_data);
+            var info = {"csrf_name" : csrfName,"csrf_value" : csrfValue, "sort" : sortable_data, "category": category }; 
+
+            $.ajax({ //ajax
+                data: info,
+                type: 'POST',
+                url: '{{ path_for('admin.queue-image') }}', // save.php - file with database update
+                success:function(result) {
+                    // isInRequest = false;
+                    // tryExecuteNextRequest(); // try execute next request
+                    console.log('it worked!');
+                    console.log(result);
+                }, 
+                error: function () {
+                    console.log('it failed!');
+                }
+            });
+        // tryExecuteNextRequest();
+    });
+
+// function tryExecuteNextRequest() {
+//     if(!isInRequest && requestQueue.length != 0) { // currently no request running &
+//         var nextRequest = requestQueue.shift();
+//         nextRequest(); // execute next request
+//     }
+// }
+
+
+    </script>
+{% endblock %}

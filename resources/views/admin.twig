@@ -1,0 +1,150 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+
+	<link rel="stylesheet" href="{{ base_url()}}/css/jquery.plupload.queue.css" type="text/css" media="screen" />
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- production -->
+	<script type="text/javascript" src="{{ base_url()}}/js/plupload.full.min.js"></script>
+	<script type="text/javascript" src="{{ base_url()}}/js/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+	
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+	    <div class="container">
+	        <h3>New Post</h3>
+    		<form method="post" action="{{ path_for('admin') }}" autocomplete = "off" enctype="multipart/form-data">
+    		    <div class="row">
+    		        <div class="col-md-12">
+                		<div class = "form-group {{ errors.category ? 'has-error' : '' }}">
+                			<label for = "Category" >Category</label>
+            				{% for categorys, number in data['category'] %}
+            					<label class="radio-inline"><input type="radio" name = "category" value={{number}} >{{categorys}}</label>
+            				{% endfor %}
+            				{% if errors.category %}
+            					<span class = "help-block">{{ errors.category | first }}</span>
+            				{% endif %}
+                		</div>
+                		
+                		<div class = "form-group {{ errors.title ? 'has-error' : '' }}" >
+                			<label for="Title">Title</label>
+                    		<input class="form-control" id="title" name = "title" required="required"></input>
+                    		{% if errors.title %}
+                				<span class = "help-block">{{ errors.title | first }}</span>
+                			{% endif %}
+                		</div>
+                		
+                		<div class = "form-group {{ errors.description ? 'has-error' : '' }}" >
+                			<label for="description">Description</label>
+                    		<textarea class="form-control" id="description" name = "description" rows="3" required="required"></textarea>
+                    		{% if errors.description %}
+                				<span class = "help-block">{{ errors.description | first }}</span>
+                			{% endif %}
+                		</div>
+                		
+                		<div class = "form-inline">
+                			<div class = "form-group ">
+                				<div style="float: left; margin-right: 20px">
+                					<div id="html5_uploader" style="height: 330px;">Your browser doesn't support native upload.</div>
+                				</div>
+                			</div>
+                		</div>
+                		
+                		<br style="clear: both" /><br style="clear: both" />
+                		<input type="submit" class="btn btn-primary" value="Send" />
+                	</div>	
+                </div>	
+                {{ csrf.field | raw }}
+        	</form>
+    	</div>
+
+    <script type="text/javascript">
+    $(function() {
+    	// Setup flash version
+    	$("#flash_uploader").pluploadQueue({
+    		// General settings
+    		runtimes : 'flash',
+    		url : '../upload.php',
+    		chunk_size : '1mb',
+    		unique_names : true,
+    		
+    		filters : {
+    			max_file_size : '10mb',
+    			mime_types: [
+    				{title : "Image files", extensions : "jpg,gif,png"},
+    				{title : "Zip files", extensions : "zip"}
+    			]
+    		},
+    
+    		// Resize images on clientside if we can
+    		resize : {width : 320, height : 240, quality : 90},
+    
+    		// Flash settings
+    		flash_swf_url : '../../js/Moxie.swf'
+    	});
+    
+    
+    	// Setup silverlight version
+    	$("#silverlight_uploader").pluploadQueue({
+    		// General settings
+    		runtimes : 'silverlight',
+    		url : '../upload.php',
+    		chunk_size : '1mb',
+    		unique_names : true,
+    		
+    		filters : {
+    			max_file_size : '10mb',
+    			mime_types: [
+    				{title : "Image files", extensions : "jpg,gif,png"},
+    				{title : "Zip files", extensions : "zip"}
+    			]
+    		},
+    
+    		// Resize images on clientside if we can
+    		resize : {width : 320, height : 240, quality : 90},
+    
+    		// Silverlight settings
+    		silverlight_xap_url : '../../js/Moxie.xap'
+    	});
+    
+    	// Setup html5 version
+    	$("#html5_uploader").pluploadQueue({
+    		// General settings
+    		runtimes : 'html5',
+    		url : '{{ upload() }}',
+    		chunk_size : '1mb',
+    		unique_names : true,
+    		
+    		filters : {
+    			max_file_size : '10mb',
+    			mime_types: [
+    				{title : "Image files", extensions : "jpg,gif,png"},
+    				{title : "Zip files", extensions : "zip"}
+    			]
+    		},
+    		resize : {
+    		    quality : 50,
+    		    crop: true 
+    		},
+    
+    
+    	});
+    
+    
+    	// Setup html4 version
+    	$("#html4_uploader").pluploadQueue({
+    		// General settings
+    		runtimes : 'html4',
+    		url : '../upload.php',
+    		unique_names : true,
+    		
+    		filters : {
+    			mime_types: [
+    				{title : "Image files", extensions : "jpg,gif,png"},
+    				{title : "Zip files", extensions : "zip"}
+    			]
+    		}
+    	});
+    });
+    </script>
+</body>
+{% endblock %}

@@ -1,0 +1,296 @@
+<head>
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-indicator.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-video.css">
+</head>
+<body class="home-page">
+	<div class="wrap-body">
+		<div class="social-media pull-right" style="padding-top:25px">
+			<ul class="list-inline">
+				<li>
+					<a href="https://www.facebook.com/daniel.chongdnc">
+						<span class="fa-stack fa-lg icon-facebook social-icon">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-facebook fa-stack-1x"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/dnc_photography_malaysia/">
+						<span class="fa-stack fa-lg icon-instagram social-icon">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-instagram fa-stack-1x"></i>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<span class="fa-stack fa-lg icon-gplus social-icon">
+						  <i class="fa fa-square fa-stack-2x"></i>
+						  <i class="fa fa-google-plus fa-stack-1x"></i>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		
+		<header>
+			<div style="text-align:left">
+				<div class="logo">
+					<img src="{{ base_url()}}/images/dnc-b.jpg" class="img-responsive logo-img"/>
+				</div>
+			</div>			
+		</header>
+		<nav class="navbar navbar-inverse" style="font-size:17px; font-weight:700;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+				</div>
+				
+				<div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="{{path_for('home')}}"><span>Home</span></a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{path_for('wedding_ceremony')}}"><span>Wedding Ceremony</span></a></li>
+								<li><a href="{{path_for('pre_wedding')}}"><span>Pre Wedding</span></a></li>
+								<li><a href="{{path_for('couple')}}"><span>Couple</span></a></li>
+								<li><a href="{{path_for('sister')}}"><span>Sister Hood</span></a></li>
+								<li><a href="{{path_for('family')}}"><span>Family</span></a></li>
+								<li><a href="{{path_for('portrait')}}"><span>Portrait</span></a></li>								
+							</ul>
+						</li>
+						<li><a href="{{path_for('about')}}"><span>About</span></a></li>
+						<li><a href="{{path_for('contact')}}"><span>Contact</span></a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</nav>
+		<div id="owl-slide" class="owl-carousel">
+			{% for key, value in slide %}
+				<div class="item">
+					<img class="img-responsive" src= {{value.pic_name}} />
+				</div>
+			{% endfor %}
+		</div>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------content-box-1-------------------->
+				<section class="content-box box-1">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="box-header">
+								<h2>ABOUT US</h2>
+							</div>
+							<div class="box-content">
+								<p>Photography? Love?
+								In 60/70 century, the concept of love can be depict as naive and simple. It is also  contained the sense of sincerity.
+								One can sensibly felt passion, simple, frank and of cause sense of sincerity in a simple photograph.
+								Photos are not presented just for people to feel it. It can capture the perfect moment of love and keep in people's heart eternally...</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-box box-1">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="box-header">
+								<h2 style = "font-family: sans-serif">Story</h2>
+							</div>
+							<div class="box-content">
+								<div id="blueimp-video-carousel" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+								    <div class="slides"></div>
+								    <h3 class="title"></h3>
+								    <a class="prev">‹</a>
+								    <a class="next">›</a>
+								    <a class="play-pause"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-2-------------------->
+				<section class="content-box box-style-1 box-2">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('wedding_ceremony')}}" class="portfolio-box">
+													<img  class="img-responsive" src="{{ base_url()}}/images/category/ceremony1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="{{ base_url()}}/images/category/ceremony2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Wedding Ceremony</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('pre_wedding')}}" class="portfolio-box">
+													<img  class="img-responsive" src="{{ base_url()}}/images/category/prewedding2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="{{ base_url()}}/images/category/prewedding3a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Pre Wedding</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('couple')}}" class="portfolio-box">
+													<img  class="img-responsive" src="{{ base_url()}}/images/category/couple1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img class="img-responsive"  src="{{ base_url()}}/images/category/couple2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Couple</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('sister')}}" class="portfolio-box">
+													<img  class="img-responsive" src="{{ base_url()}}/images/category/sisterhood2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="{{ base_url()}}/images/category/sisterhooda.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Sister Hood</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('family')}}" class="portfolio-box">
+													<img  class="img-responsive" src="{{ base_url()}}/images/category/family1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="{{ base_url()}}/images/category/family2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Family</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('portrait')}}" class="portfolio-box">
+													<img class="img-responsive"  src="{{ base_url()}}/images/category/portrait2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img class="img-responsive"  src="{{ base_url()}}/images/category/portrait3a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Portrait</h3>
+											</div>
+										</article>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-3-------------------->
+				<section class="content-box box-3" style="padding-top: 20px; padding-bottom: 20px;">
+					{# <div class="col-sm-6 col-md-6" style="text-align: center; padding-top: 20px;">
+						<!-- InstaWidget -->
+                        <a href="https://instawidget.net/v/user/dnc_photography_malaysia" id="link-750dad7a66980db02b907616be339fd302110a516df88e403659eb1ae9ec7edd">@dnc_photography_malaysia</a>
+                        <script src="https://instawidget.net/js/instawidget.js?u=750dad7a66980db02b907616be339fd302110a516df88e403659eb1ae9ec7edd&width=300px"></script>
+					</div> #}
+					<div class="col-sm-6 col-md-6" style="text-align: center; padding-top: 20px;">
+						{# <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDNC0808%2F&tabs=timeline&width=300&height=465&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="465" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> #}
+						{# <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDNC0808&tabs=timeline&width=300&height=465&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=false&appId" width="300" height="465" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> #}
+					</div>
+				</section>
+				<!-----------------content-box-4-------------------->
+				<section class="content-box box-style-1 box-4">
+					<div class="zerogrid" style="width: 100%">
+						<div class="wrap-box"><!--Start Box-->
+							{{ html_data|raw }}
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+		<!-- carousel -->
+		<script src="{{ base_url()}}/css/js/owl.carousel.js"></script>
+		<script>
+		$(document).ready(function() {
+		  $("#owl-slide").owlCarousel({
+			autoPlay: 3000,
+			items : 1,
+			itemsDesktop : [1199,1],
+			itemsDesktopSmall : [979,1],
+			itemsTablet : [768, 1],
+			itemsMobile : [479, 1],
+			navigation: true,
+			navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+			pagination: false
+		  });
+		});
+		</script>
+	</div>
+<script src="{{ base_url()}}/js/blueimp-helper.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-video.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-vimeo.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-youtube.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-indicator.js"></script>
+<script src="{{ base_url()}}/js/jquery.blueimp-gallery.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+  'use strict'
+  var video_data = {{ video|json_encode|raw }}
+
+  // Initialize the Gallery as video carousel:
+  blueimp.Gallery(
+  	video_data,
+  {
+    container: '#blueimp-video-carousel',
+    carousel: true
+  })
+})
+</script>
+</body>

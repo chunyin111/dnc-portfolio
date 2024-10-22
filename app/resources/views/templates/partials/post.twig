@@ -1,0 +1,108 @@
+<head>
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-indicator.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-video.css">
+</head>
+<body class="single-page">
+	<div class="wrap-body">
+		<header class="">
+			<div class="logo">
+				<img src="http://localhost/dnc/images/dnc-b.jpg" height="35%" width="35%"/>
+			</div>
+			<div id="cssmenu" class="align-center">
+				<ul>
+					<li><a href="{{path_for('home')}}"><span>Home</span></a></li>
+					<li class="has-sub"><a href="#"><span>Gallery</span></a>
+						<ul>
+							<li class="has-sub"><a href="{{path_for('wedding_ceremony')}}"><span>Wedding Ceremony</span></a></li>
+							<li class="has-sub"><a href="#"><span>Pre Wedding</span></a></li>
+							<li class="has-sub"><a href="#"><span>Family</span></a></li>
+							<li class="has-sub"><a href="#"><span>Sister Hood</span></a></li>
+							<li class="has-sub"><a href="#"><span>Baby Born</span></a></li>
+							<li class="has-sub"><a href="#"><span>Personal Photo Album</span></a></li>
+						</ul>
+					</li>
+					<li><a href="{{path_for('about')}}"><span>About</span></a></li>
+					<li class="last"><a href= "{{path_for('contact')}}"><span>Contact</span></a></li>
+				</ul>
+			</div>
+			
+			<!-- <div id="owl-slide" class="owl-carousel">
+				{% for key, value in slide %}
+					<div class="item">
+						<img src= {{value.pic_name}} />
+					</div>
+				{% endfor %}
+			</div> -->
+		</header>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------Content-Box-------------------->
+				<div id="main-content">
+					<div class="wrap-content">
+						<div class="row">
+							<article class="single-post zerogrid">
+								<div class="row wrap-post"><!--Start Box-->
+									<div class="entry-header">
+										<span class="time">June 26, 2013  by admin</span>
+										<h2 class="entry-title"><a href="#">RETRO GALLERY: FRAGMENTING PERSISTENT FLIGHT AND PATHOLOGY</a></h2>
+										<span class="cat-links"><a href="#">BUSINESS</a>, <a href="#">LIFESTYLE</a></span>
+									</div>
+									<div class="post-thumbnail-wrap">
+										<div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+										    <div class="slides"></div>
+										    <h3 class="title"></h3>
+										    <a class="prev">‹</a>
+										    <a class="next">›</a>
+										    <a class="play-pause"></a>
+										</div>
+									</div>
+									<div class="entry-content">
+										<div class="excerpt"><p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum exercitation ullamco laboris nisi ut aliquip.</p></div>
+										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+										<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
+										<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril.</p>
+										<h2>Heading 1</h2>
+										<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse lorem ipsum dolor sit amet.</p>
+										<h2>Heading 2</h2>
+										<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et accusam et justo.</p>
+										<h2>Heading 3</h2>
+										<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum hendrerit in vulputate velit esse molestie.</p>
+										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+										<p><code>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</code></p>
+										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+										<div class="note">
+										  <ol>
+											<li>Lorem ipsum</li>
+											<li>Sit amet vultatup nonumy</li>
+											<li>Duista sed diam</li>
+										  </ol>
+										  <div class="clear"></div>
+										</div>
+										<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+										<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores.</p>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<script src="{{ base_url()}}/js/blueimp-helper.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-indicator.js"></script>
+<script src="{{ base_url()}}/js/jquery.blueimp-gallery.js"></script>
+
+<script  type="text/javascript">
+var picture = {{ data.pictures|json_encode|raw }};
+	 blueimp.Gallery(picture, {
+      container: '#blueimp-image-carousel',
+      carousel: true
+    })
+
+</script>
+</body>
+</html>

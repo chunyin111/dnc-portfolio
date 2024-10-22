@@ -1,0 +1,186 @@
+<style>
+.fa-stack-1x {
+    color:white;
+}
+.social-icon{
+	color:#000;
+}
+
+.icon-facebook:hover {
+   color:#3b5998;
+}
+
+.icon-instagram:hover {
+    color:#517fa4;
+}
+
+.icon-gplus:hover{
+    color:#dd4b39;
+}
+
+.img-padding{
+    padding: 5% 5% 5% 5%;
+}
+
+.row-padding{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.footer-bar{
+	border-top: 1px solid #bbb;
+	margin-left: 6%;
+    margin-right: 6%;
+}
+
+.sub-hover a:hover {
+    background: #4f4f4f
+}
+
+
+.sub-hover a:hover > span{
+    color: #fff;
+}
+
+.checkboxes label {
+	min-width: 80px;
+	text-align: center;
+  	display: block;
+  	float: left;
+  	padding-right: 10px;
+  	white-space: nowrap;
+}
+.checkboxes input {
+  	vertical-align: middle;
+}
+.checkboxes label span {
+  	vertical-align: middle;
+}
+
+body {
+    background-color: black;
+}
+</style>
+<!DOCTYPE html>
+<html lang= "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>DNC Photographers</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ base_url()}}/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/menu.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/style.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/zerogrid.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/owl.carousel.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/owl.theme.css">
+		<link rel="stylesheet" href="{{ base_url()}}/css/owl.transitions.css">
+		<script src="{{ base_url()}}/js/jquery1111.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class = "container">
+			{% block content %}{% endblock %}
+		</div>
+		<footer>
+			<div class="zerogrid wrap-footer">
+				<div class="row-padding">
+					<div class="col-1-4 col-footer-1">
+						<div class="wrap-col">
+							<h3 class="widget-title">About Us</h3>
+							<p>Photography? Love?
+								In 60/70 century,the concept of love can be depict as naive and simple. It is also  contained the sense of sincerity.
+								One can sensibly felt passion, simple, frank and of cause sense of sincerity in a simple photograph.
+								Photos are not presented just for people to feel it. It can capture the perfect moment of love and keep in people's heart eternally...</p>
+						</div>
+					</div>
+					<div class="col-1-4 col-footer-2">
+						<div class="wrap-col">
+							<h3 class="widget-title">Recent Post</h3>
+							<ul>
+								<li><a href="#">MOST VISITED COUNTRIES</a></li>
+								<li><a href="#">5 PLACES THAT MAKE A GREAT HOLIDAY</a></li>
+								<li><a href="#">PEBBLE TIME STEEL IS ON TRACK TO SHIP IN JULY</a></li>
+								<li><a href="#">STARTUP COMPANY’S CO-FOUNDER TALKS ON HIS NEW PRODUCT</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-1-4 col-footer-3">
+						<div class="wrap-col">
+							<h3 class="widget-title">Tag Cloud</h3>
+							<a href="#">animals</a>
+							<a href="#">cooking</a>
+							<a href="#">countries</a>
+							<a href="#">city</a>
+							<a href="#">children</a>
+							<a href="#">home</a>
+							<a href="#">likes</a>
+							<a href="#">photo</a>
+							<a href="#">link</a>
+							<a href="#">law</a>
+							<a href="#">shopping</a>
+							<a href="#">skate</a>
+							<a href="#">scholl</a>
+							<a href="#">video</a>
+							<a href="#">travel</a>
+							<a href="#">images</a>
+							<a href="#">love</a>
+							<a href="#">lists</a>
+							<a href="#">makeup</a>
+							<a href="#">media</a>
+							<a href="#">password</a>
+							<a href="#">pagination</a>
+							<a href="#">wildlife</a>
+						</div>
+					</div>
+					<div class="col-1-4 col-footer-4">
+						<div class="wrap-col">
+							<h3 class="widget-title">Gallery</h3>
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="http://localhost/dnc/images/11.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/1.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/13.jpg"></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="http://localhost/dnc/images/10.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/9.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/4.jpg"></a>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<a href="#"><img src="http://localhost/dnc/images/2.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/6.jpg"></a>
+										<a href="#"><img src="http://localhost/dnc/images/5.jpg"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bar"></div>
+
+			<div class="zerogrid bottom-footer">
+				<div class="row">
+					<div class="bottom-social">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+					</div>
+				</div>
+				<div class="copyright">
+					Copyright @ - Designed by Daniel Choong DNC
+				</div>
+			</div>
+
+		</footer>
+		<script scr="{{ base_url()}}/js/jquery.min.js"></script>
+		<script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jssocials.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>

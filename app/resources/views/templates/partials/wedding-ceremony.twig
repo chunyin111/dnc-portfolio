@@ -1,0 +1,127 @@
+<head>
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-indicator.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-video.css">
+</head>
+<body class="single-page">
+	<div class="wrap-body">
+		<header class="">
+			<div class="logo">
+				<img src="http://localhost/dnc/images/dnc-b.jpg" height="35%" width="35%"/>
+			</div>
+
+			<div class="social-media" style="position: absolute;top:0;right:0; padding-top:25px">
+				<ul class="list-inline">
+				    <li><a href="https://www.facebook.com/daniel.chongdnc">
+				        <span class="fa-stack fa-lg icon-facebook social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-facebook fa-stack-1x"></i>
+				        </span>
+				        </a></li>
+				    <li><a href="#">
+				        <span class="fa-stack fa-lg icon-instagram social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-instagram fa-stack-1x"></i>
+				        </span>
+				    </a></li>
+				    <li><a href="#">
+				        <span class="fa-stack fa-lg icon-gplus social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-plus fa-stack-1x"></i>
+				        </span>
+				        </a></li>
+				</ul>
+			</div>
+		</header>
+
+			<div id="cssmenu" class="align-center">
+				<ul>
+					<li><a href="{{path_for('home')}}"><span>Home</span></a></li>
+					<li class="active" ><a href="#"><span>Gallery</span></a>
+						<ul>
+							<li class="has-sub sub-hover"><a href="{{path_for('wedding_ceremony')}}"><span>Wedding Ceremony</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Pre Wedding</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Couple</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Sister Hood</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Family</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Portrait</span></a></li>
+						</ul>
+					</li>
+					<li><a href="{{path_for('about')}}"><span>About</span></a></li>
+					<li><a href="{{path_for('contact')}}"><span>Contact</span></a></li>
+				</ul>
+			</div>
+			
+			<!-- <div id="owl-slide" class="owl-carousel">
+				{% for key, value in slide %}
+					<div class="item">
+						<img src= {{value.pic_name}} />
+					</div>
+				{% endfor %}
+			</div> -->
+		</header>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------Content-Box-------------------->
+				<div id="main-content">
+					<div class="wrap-content">
+						<div class="row">
+							<article class="single-post zerogrid">
+								<div class="row wrap-post"><!--Start Box-->
+									<h3 style = "text-transform: uppercase;margin-bottom: 25px; text-align: center;">Wedding Ceremony</h3>
+									<div id="links" class="links">
+										{% for key, value in data %}
+											 <a href="{{ value.url_image }}" title="lol" data-gallery>
+										        <img src="{{ value.thumb_image }}" alt="">
+										   	 </a>
+									    {% endfor %}
+									</div>
+									<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+									<div id="blueimp-gallery" class="blueimp-gallery">
+									    <div class="slides"></div>
+									    <h3 class="title"></h3>
+									    <a class="prev">‹</a>
+									    <a class="next">›</a>
+									    <a class="close">×</a>
+									    <a class="play-pause"></a>
+									    <ol class="indicator"></ol>
+									</div>
+								</div>
+							</article>
+							<!-- <div class="zerogrid">
+								<div class="comments-are">
+									<div id="comment">
+										<h3>Leave a Reply</h3>
+										<span>Your email address will not be published. Required fields are marked </span>
+										<form name="comment_form" id="comment_form" method="post" action="">
+											<label>
+											<span>Comment:</span>
+											<textarea name="message" id="message"></textarea>
+											</label>
+											<label>
+											<span>Name:</span>
+											<input type="text"  name="name" id="name" required>
+											</label>
+											<label>
+											<span>Email:</span>
+											<input type="email"  name="email" id="email" required>
+											</label>
+											<center><input class="sendButton" type="submit" name="submitcomment" value="Submit"></center>
+										</form>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+<script src="{{ base_url()}}/js/blueimp-helper.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-indicator.js"></script>
+<script src="{{ base_url()}}/js/jquery.blueimp-gallery.js"></script>
+<!-- <script src="{{ base_url()}}/js/demo.js"></script> -->
+</body>
+</html>

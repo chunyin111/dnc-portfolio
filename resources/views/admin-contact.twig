@@ -1,0 +1,66 @@
+{% extends 'templates/admin-app.twig' %}
+{% block content %}
+	<!-- <link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-grid.min.css" type="text/css"/>
+	<link rel="stylesheet" href="{{ base_url()}}/css/bootstrap/bootstrap-reboot.min.css" type="text/css" /> -->
+
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+div.list {
+    margin: 0px auto;
+    padding: 20px;
+    margin-right:20%;
+} 
+</style>
+
+	<div class = "list">
+	<body style="font: 13px Verdana; background: #eee; color: #333">
+		<div class="container">
+		    <h3>Contact List</h3>
+		    <div class="table-responsive">
+    			<table class="table table-striped table-bordered ">
+    			  <tr>
+    			    <th>ID</th>
+    			    <th>First Name</th>
+                    <th>Last Name</th>
+    			    <th>Email</th>
+    			    <th>Phone Number</th>
+    			    <th>Message</th>
+                    <th>Services</th>
+    			    <th>Venue</th>
+    			    <th>Date</th>
+    			  </tr>
+    			  {% for key, value in data %}
+    			  <tr>
+    			    <td>{{ value.id }}</td>
+    			    <td>{{ value.first }}</td>
+                    <td>{{ value.last }}</td>
+    			    <td>{{ value.email }}</td>
+    			    <td>{{ value.number }}</td>
+    			    <td>{{ value.message }}</td>
+                    <td>{{ value.services }}</td>
+    			    <td>{{ value.venue }}</td>
+    			    <td>{{ value.created_at }}</td>
+    			  </tr>
+    			  {% endfor %}
+    			</table>
+			</div>
+        </div>
+	</body>
+	</div>
+	<script type="text/javascript"></script>
+{% endblock %}

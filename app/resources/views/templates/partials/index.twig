@@ -1,0 +1,339 @@
+<head>
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-indicator.css">
+	<link rel="stylesheet" href="{{ base_url()}}/css/blueimp-gallery-video.css">
+</head>
+<body class="home-page">
+	<div class="wrap-body">
+		<header class="">
+			<div class="logo">
+				<img src="http://localhost/dnc/images/dnc-b.jpg" height="35%" width="35%"/>
+			</div>
+
+			<div class="social-media" style="position: absolute;top:0;right:0; padding-top:25px">
+				<ul class="list-inline">
+				    <li><a href="">
+				        <span class="fa-stack fa-lg icon-facebook social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-facebook fa-stack-1x"></i>
+				        </span>
+				        </a></li>
+				    <li><a href="#">
+				        <span class="fa-stack fa-lg icon-instagram social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-instagram fa-stack-1x"></i>
+				        </span>
+				    </a></li>
+				    <li><a href="#">
+				        <span class="fa-stack fa-lg icon-gplus social-icon">
+				          <i class="fa fa-square fa-stack-2x"></i>
+				          <i class="fa fa-plus fa-stack-1x"></i>
+				        </span>
+				        </a></li>
+				</ul>
+			</div>
+		</header>
+
+			<div id="cssmenu" class="align-center">
+				<ul>
+					<li class="active"><a href="{{path_for('home')}}"><span>Home</span></a></li>
+					<li class="has-sub"><a href="#"><span>Gallery</span></a>
+						<ul>
+							<li class="has-sub sub-hover"><a href="{{path_for('wedding_ceremony')}}"><span>Wedding Ceremony</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Pre Wedding</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Couple</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Sister Hood</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Family</span></a></li>
+							<li class="has-sub sub-hover"><a href="#"><span>Portrait</span></a></li>
+						</ul>
+					</li>
+					<li><a href="{{path_for('about')}}"><span>About</span></a></li>
+					<li class="last"><a href="{{path_for('contact')}}"><span>Contact</span></a></li>
+				</ul>
+			</div>
+
+			<div id="owl-slide" class="owl-carousel">
+				{% for key, value in slide %}
+					<div class="item">
+						<img class="img-responsive" src= {{value.pic_name}} />
+					</div>
+				{% endfor %}
+			</div>
+		</header>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------content-box-1-------------------->
+				<section class="content-box box-1">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="box-header">
+								<h2>ABOUT US</h2>
+							</div>
+							<div class="box-content">
+								<p>Photography? Love?
+								In 60/70 century,the concept of love can be depict as naive and simple. It is also  contained the sense of sincerity.
+								One can sensibly felt passion, simple, frank and of cause sense of sincerity in a simple photograph.
+								Photos are not presented just for people to feel it. It can capture the perfect moment of love and keep in people's heart eternally...</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-box box-1">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="box-header">
+								<h2>Story</h2>
+							</div>
+							<div class="box-content">
+								<div id="blueimp-video-carousel" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
+								    <div class="slides"></div>
+								    <h3 class="title"></h3>
+								    <a class="prev">‹</a>
+								    <a class="next">›</a>
+								    <a class="play-pause"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-2-------------------->
+				<section class="content-box box-style-1 box-2">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="{{path_for('wedding_ceremony')}}" class="portfolio-box">
+													<img  class="img-responsive" src="http://localhost/dnc/images/category/ceremony1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="http://localhost/dnc/images/category/ceremony2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Wedding Ceremony</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="single.html" class="portfolio-box">
+													<img  class="img-responsive" src="http://localhost/dnc/images/category/prewedding2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="http://localhost/dnc/images/category/prewedding3a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Pre Wedding</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="single.html" class="portfolio-box">
+													<img  class="img-responsive" src="http://localhost/dnc/images/category/couple1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img class="img-responsive"  src="http://localhost/dnc/images/category/couple2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Couple</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="single.html" class="portfolio-box">
+													<img  class="img-responsive" src="http://localhost/dnc/images/category/sisterhood2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="http://localhost/dnc/images/category/sisterhooda.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Sister Hood</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="single.html" class="portfolio-box">
+													<img  class="img-responsive" src="http://localhost/dnc/images/category/family1a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img  class="img-responsive" src="http://localhost/dnc/images/category/family2a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Family</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<article>
+											<div class="post-thumbnail-wrap">
+												<a href="single.html" class="portfolio-box">
+													<img class="img-responsive"  src="http://localhost/dnc/images/category/portrait2a.jpg" alt="">
+													<div class="portfolio-box-second">
+														<img class="img-responsive"  src="http://localhost/dnc/images/category/portrait3a.jpg" alt="">
+													</div>
+												</a>
+											</div>
+											<div class="entry-header ">
+												<h3 class="entry-title">Portrait</h3>
+												<div class="l-tags"><a href="#">Design</a> / <a href="#">Illustrations</a></div>
+											</div>
+										</article>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-3-------------------->
+				<section class="content-box box-3">
+					<div class="zerogrid">
+						<div class="wrap-box"><!--Start Box-->
+							<div class="box-header">
+								<h2>OUR PHILOSOPHY</h2>
+							</div>
+							<div class="box-content">
+								<div class="row">
+									<div class="col-1-2">
+										<div class="wrap-col">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril.</p>
+										</div>
+									</div>
+									<div class="col-1-2">
+										<div class="wrap-col">
+											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril.</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<blockquote><p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet vultatup duista.</p></blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-4-------------------->
+				<section class="content-box box-style-1 box-4">
+					<div class="zerogrid" style="width: 100%">
+						<div class="wrap-box"><!--Start Box-->
+							{{ html_data|raw }}
+						</div>
+					</div>
+				</section>
+			</div>
+		</section>
+		<!-- carousel -->
+		<script src="{{ base_url()}}/css/js/owl.carousel.js"></script>
+		<script>
+		$(document).ready(function() {
+		  $("#owl-slide").owlCarousel({
+			autoPlay: 3000,
+			items : 1,
+			itemsDesktop : [1199,1],
+			itemsDesktopSmall : [979,1],
+			itemsTablet : [768, 1],
+			itemsMobile : [479, 1],
+			navigation: true,
+			navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+			pagination: false
+		  });
+		});
+		</script>
+	</div>
+<script src="{{ base_url()}}/js/blueimp-helper.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-video.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-vimeo.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-youtube.js"></script>
+<script src="{{ base_url()}}/js/blueimp-gallery-indicator.js"></script>
+<script src="{{ base_url()}}/js/jquery.blueimp-gallery.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+  'use strict'
+
+  // Initialize the Gallery as video carousel:
+  blueimp.Gallery([
+    {
+      title: 'Sintel',
+      href: 'https://archive.org/download/Sintel/' +
+        'sintel-2048-surround.mp4',
+      type: 'video/mp4',
+      poster: 'https://i.imgur.com/MUSw4Zu.jpg'
+    },
+    {
+      title: 'Big Buck Bunny',
+      href: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/' +
+        'Big_Buck_Bunny_4K.webm',
+      type: 'video/webm',
+      poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/' +
+        'Big_Buck_Bunny_4K.webm/4000px--Big_Buck_Bunny_4K.webm.jpg'
+    },
+    {
+      title: 'Elephants Dream',
+      href: 'https://upload.wikimedia.org/wikipedia/commons/8/83/' +
+        'Elephants_Dream_%28high_quality%29.ogv',
+      type: 'video/ogg',
+      poster: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/' +
+        'Elephants_Dream_s1_proog.jpg/800px-Elephants_Dream_s1_proog.jpg'
+    },
+    {
+      title: 'LES TWINS - An Industry Ahead',
+      type: 'text/html',
+      youtube: 'zi4CIXpx7Bg'
+    },
+     {
+      title: 'Final Fantasy 15',
+      type: 'text/html',
+      youtube: 'oMfk_z6du44'
+    },
+    {
+      title: 'KN1GHT - Last Moon',
+      type: 'text/html',
+      vimeo: '73686146',
+      poster: 'https://secure-a.vimeocdn.com/ts/448/835/448835699_960.jpg'
+    }, 
+    {
+      title: 'LOVE STORY Gordon & Vannie',
+      type: 'text/html',
+      vimeo: '173798709',
+      // poster: 'https://secure-a.vimeocdn.com/ts/448/835/448835699_960.jpg'
+    }
+  ], {
+    container: '#blueimp-video-carousel',
+    carousel: true
+  })
+})
+</script>
+</body>

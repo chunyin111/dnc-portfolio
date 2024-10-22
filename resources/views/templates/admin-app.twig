@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang= "en">
+	<head>
+	<style>
+		 body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+	
+		#msg {
+		    position:relative;
+		    margin-top: 1em; /*set to a negative number 1/2 of your height*/
+		}
+
+
+	</style>
+		<meta charset = "UTF-8">
+		<title>Admin Page</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="{{ base_url()}}/js/jquery1111.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class = "container">
+		    
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">DNC Photography</a>
+                    </div>
+		    
+        		    <div id="navbar" class="navbar-collapse collapse">
+                        {% if auth.check %}
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href= {{ path_for('admin') }}>Upload Post</a></li>
+                                    <li><a href= {{ path_for('upload-image') }}>Upload Image</a></li>
+                                </ul>
+                            </li>
+                            <li><a href= {{ path_for('admin.contact') }}>Contact List</a></li>
+                            <li><a href= {{ path_for('admin.remove-image') }}>Remove Image</a></li>
+                            <li><a href= {{ path_for('admin.queue-image') }}>Queue Image</a></li>
+                            <li><a href= {{ path_for('admin.video') }}>Add Video</a></li>
+                        </ul>
+                        {% endif %}
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if auth.check %}
+                            <li class = "dropdown">
+                                <a href="#" class = "dropdown-toggle" data-toggle = "dropdown" role ="button" aria-haspopup ="true"  aria-expanded ="false">{{ auth.user.name }}<span class ="caret"></span></a>
+                                <ul class ="dropdown-menu">
+                                    <li><a href = {{ path_for('auth.password.change') }}> Change Password</a></li>
+                                    <li><a href =  {{ path_for('auth.signout') }}> Sign Out</a></li>
+                                </ul>
+                            </li>
+                            {% else %}
+                            {#<li><a href = {{ path_for('auth.signup') }}>Sign Up</a></li>#}
+                            <li><a href = {{ path_for('auth.signin') }}>Sign In</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+			<div id ="body">
+			    <div id = "msg">
+				    {% include 'templates/partials/flash.twig'%}
+			    </div>
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+		<script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+</html>

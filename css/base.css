@@ -1,0 +1,117 @@
+/* ------------------------
+*
+* KEYNERS
+* http://keyners.pl/
+*
+* SORTABLE GALLERY - FREEBIE
+* 
+* --------------------------
+*/
+
+
+
+body {margin:0; padding: 0; font-family: "Open Sans", Arial, sans-serif; font-weight: 300; }
+body {background: #fff; color: #000;}
+
+
+
+
+
+
+/* ------------------------
+*
+* 	Headings, anchor, paragraph
+*
+*  -------------------------- */
+h1,h2,h3,h4,h5,h6 {width:100%;float:left;}
+h1 {text-align: center; font-size: 44px; font-family: 'Montserrat'; color: #fff; text-shadow: 0 1px 1px rgba(0,0,0,.5);}
+
+a, a:visited {color: #2F86BE; text-decoration: none;}
+
+p {font-size: 13px; color: #585858; line-height: 18px; padding-bottom: 10px;}
+p b {font-weight: 400}
+
+
+
+
+
+/* ------------------------
+*
+* 	Section, article
+*
+*  -------------------------- */
+section, article {width: 100%; float: left; margin: 30px 0;}
+
+
+
+
+
+
+/* ------------------------
+*
+* 			Navigation
+*
+*  -------------------------- */
+
+header {width: 100%; float: left; padding: 175px 0; background:  url(../images/misc/bg_body.png)  center 0 fixed;} 
+
+
+
+
+
+
+
+
+/* ------------------------
+*
+* 		ul#Sortable Gallery
+*
+*  -------------------------- */
+ul.sortable {width: 100%; float: left; margin: 20px 0; list-style: none; position: relative !important;}
+ul.sortable li {height: 200px; float: left; margin: 0 7px 7px 0; border: 2px solid #fff; cursor: move;}
+ul.sortable li img {height: 100%; float: left;}
+ul.sortable li.ui-sortable-helper {border-color: #3498db;}
+
+
+ul.sortable li.placeholder {width: 300px; height: 200px; float: left; background: #eee; border: 2px dashed #bbb; display: block; opacity: 0.6;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+
+
+button.save {float: left; padding: 10px 13px; border: none; outline: none; background: #27ae60; color: #fff; font-family: 'Montserrat', Arial, sans-serif; text-transform: uppercase; cursor: pointer; letter-spacing: 1px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+button.save:hover {background: #2ecc71;}
+
+
+
+
+
+
+
+/* ------------------------
+*
+* 		download button
+*
+*  -------------------------- */
+.holder {width: 100%; float: left; margin: 20px 0; text-align: center;}
+a.download {display:inline-block; padding: 13px 22px; color: #fff; background: #9b59b6; font-family: 'Montserrat', Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+
+
+
+/* ------------------------
+*
+* 			Footer
+*
+*  -------------------------- */
+footer {width: 100%; float: left; margin-top: 20px; padding: 35px 0; background: #e3e3e3; color: #aaa; font-family: 'Montserrat'; text-align: center; font-size: 12px;}
